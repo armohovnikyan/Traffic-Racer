@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1005532229517632421}
   - component: {fileID: 7375073823403356238}
   - component: {fileID: 3527605749954669533}
+  - component: {fileID: 754359814929057294}
   m_Layer: 0
   m_Name: Truck2
   m_TagString: Untagged
@@ -67,6 +68,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d04c829feda4e439935aab97f4b456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
+--- !u!114 &754359814929057294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375053318161658837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d04c829feda4e439935aab97f4b456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!1001 &296719202509363662
 PrefabInstance:
   m_ObjectHideFlags: 0

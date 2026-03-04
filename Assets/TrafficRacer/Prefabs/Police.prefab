@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3877068399283873834}
   - component: {fileID: 5057914943555615615}
   - component: {fileID: 7329612906584663394}
+  - component: {fileID: 8724238159277584799}
   m_Layer: 0
   m_Name: Police
   m_TagString: Untagged
@@ -67,6 +68,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d04c829feda4e439935aab97f4b456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
+--- !u!114 &8724238159277584799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3877068399283873835}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18d04c829feda4e439935aab97f4b456, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 2
 --- !u!1001 &3877068398146946365
 PrefabInstance:
   m_ObjectHideFlags: 0
