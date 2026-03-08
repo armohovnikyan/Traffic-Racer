@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5377105840244690374}
   m_Layer: 0
   m_Name: Car2
-  m_TagString: Untagged
+  m_TagString: Car
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -68,7 +68,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d04c829feda4e439935aab97f4b456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
 --- !u!114 &5377105840244690374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -81,7 +80,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18d04c829feda4e439935aab97f4b456, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
 --- !u!1001 &6239536906732966371
 PrefabInstance:
   m_ObjectHideFlags: 0

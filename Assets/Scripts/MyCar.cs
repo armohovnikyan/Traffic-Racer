@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class MyCar : MonoBehaviour
 {
-    private Transform transform;
+    private Transform trans;
 
     public void Start()
     {
-        transform = GetComponent<Transform>();
+        trans = GetComponent<Transform>();
     }
 
 
@@ -25,5 +25,11 @@ public class MyCar : MonoBehaviour
             x += 3;
      
         transform.position = new Vector3(x, transform.position.y, transform.position.z);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Car"))
+            Debug.Log("Alyooooooo");
     }
 }

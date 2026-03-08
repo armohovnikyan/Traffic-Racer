@@ -3,7 +3,7 @@ using UnityEngine;
 public class Road : MonoBehaviour
 {
     private Transform rect;
-    private float speed = 1f;
+    private float speed = 2f;
 
     public void Start()
     {
