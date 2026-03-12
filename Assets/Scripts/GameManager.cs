@@ -13,9 +13,14 @@ namespace Gameplay
 
         private void Start()
         {
-            InvokeRepeating(nameof(SpawnCar),1f,spawnInterval);
+            GameEvents.RaiseOnStart();
+            GameEvents.OnPlay += Play;
         }
 
+        void Play()
+        {
+            InvokeRepeating(nameof(SpawnCar), 1f, spawnInterval);
+        }
 
         void SpawnCar()
         {
