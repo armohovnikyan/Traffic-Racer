@@ -2,13 +2,21 @@ using UnityEngine;
 
 public class MyCar : MonoBehaviour
 {
-    private Transform trans;
+    private bool isPlaying;
 
-    public void Start()
+    private void Awake()
     {
-        trans = GetComponent<Transform>();
+        GameEvents.OnRestart += Restart;
     }
 
+    private void OnDestroy()
+    {
+        GameEvents.OnRestart -= Restart;
+    }
+    private void Start()
+    {
+        isPlaying = true;
+    }
 
     public void Update()
     {
@@ -17,19 +25,34 @@ public class MyCar : MonoBehaviour
 
     private void Move()
     {
-        float x = transform.position.x;
+        if (isPlaying)
+        {
+            float x = transform.position.x;
 
-        if (Input.GetKeyDown(KeyCode.LeftArrow) && x > 7)
-            x -= 3;
-        if(Input.GetKeyDown(KeyCode.RightArrow) && x < 13)
-            x += 3;
-     
-        transform.position = new Vector3(x, transform.position.y, transform.position.z);
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && x > 7)
+                x -= 3;
+            if (Input.GetKeyDown(KeyCode.RightArrow) && x < 13)
+                x += 3;
+
+            transform.position = new Vector3(x, transform.position.y, transform.position.z);
+        }
+        else
+        {
+            return;
+        }
     }
 
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Car"))
-            Debug.Log("Alyooooooo");
+        {
+            GameEvents.RaiseOnGameEnd();
+            isPlaying = false;
+        }
+    }
+
+    void Restart()
+    {
+        isPlaying = true;
     }
 }

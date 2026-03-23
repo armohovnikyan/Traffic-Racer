@@ -1,35 +1,53 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
     [SerializeField] private GameObject myCar;
     [SerializeField] private GameObject[] roads;
     [SerializeField] private GameObject canvas;
+    [SerializeField] private GameObject GameEndCanvas;
 
     private void OnEnable()
     {
-        GameEvents.OnStart += InitGame;
+        GameEvents.OnRestart += Restart;
+        GameEvents.OnGameEnd += GameEnd;
     }
 
     private void OnDisable()
     {
-        GameEvents.OnStart -= InitGame;
+        GameEvents.OnRestart -= Restart;
+        GameEvents.OnGameEnd -= GameEnd;
     }
 
-    private void InitGame()
+    private void Start()
     {
+        canvas.SetActive(true);
         myCar.SetActive(false);
+        GameEndCanvas.SetActive(false);
         for (int i = 0; i < roads.Length; i++)
             roads[i].SetActive(false);
-        canvas.SetActive(true);
+    }
+
+    private void Restart()
+    {
+        Play();
+        GameEndCanvas.SetActive(false);
     }
 
     public void Play()
     {
         myCar.SetActive(true);
-        for (int i = 0; i < roads.Length; i++)
-            roads[i].SetActive(true);
+        for (int i = 0;i < roads.Length;i++) roads[i].SetActive(true);
         canvas.SetActive(false);
-        GameEvents.RaiseOnPlay();
+    }
+
+    public void GameEnd()
+    {
+        GameEndCanvas.SetActive(true);
+        myCar.SetActive(false);
+        for (int i = 0; i < roads.Length; i++) roads[i].SetActive(false);
+
+
     }
 }
